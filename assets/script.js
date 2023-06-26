@@ -16,5 +16,10 @@ $("#chatButton").on('click', (event) => {
   const phoneNumber = $("input").val();
   const fullPhone = `${countryCode}${phoneNumber}`;
 
+  if (!phoneNumber.trim()) {
+    alert('Insert a phone number.');
+    return;
+  }
+
   window.open(`https://wa.me/${fullPhone}`, '_blank');
 });
